@@ -1,0 +1,1080 @@
+zabbix_export:
+  graphs:
+  - graph_items:
+    - calc_fnc: ALL
+      color: 9C27B0
+      item:
+        host: Asterisk Integration
+        key: integration.incoming.call
+    - calc_fnc: ALL
+      color: 4000FF
+      item:
+        host: Asterisk Integration
+        key: integration.hangup.call
+      sortorder: '1'
+    - calc_fnc: ALL
+      color: 388E3C
+      item:
+        host: Asterisk Integration
+        key: integration.outgoing.call
+      sortorder: '2'
+    - calc_fnc: ALL
+      color: EF5350
+      item:
+        host: Asterisk Integration
+        key: integration.answered.call
+      sortorder: '3'
+    name: Вызовы
+    uuid: 443ea0b1a35543d3a4fd78bb9ed002ad
+  - graph_items:
+    - calc_fnc: ALL
+      color: 199C0D
+      item:
+        host: Asterisk Integration
+        key: agent.ping
+    name: Доступность zabbix-agenta
+    uuid: 8ccc09d275a840059a4c47b185c820b6
+    yaxismax: '2'
+    ymax_type_1: FIXED
+    ymin_type_1: FIXED
+  - graph_items:
+    - calc_fnc: ALL
+      color: 199C0D
+      item:
+        host: Asterisk Integration
+        key: net.tcp.service[tcp,{HOST.CONN},{$INTEGRATION_PORT}]
+    name: Доступность сервиса Integration
+    uuid: 50c4a24f5b14487a98301c98a4ed4340
+    yaxismax: '2'
+    ymax_type_1: FIXED
+    ymin_type_1: FIXED
+  - graph_items:
+    - calc_fnc: ALL
+      color: 199C0D
+      item:
+        host: Asterisk Integration
+        key: icmpping[,4,,,]
+    name: Доступность сетевого узла
+    uuid: 14cea3cc54b04ae2883893cdcbe77178
+    yaxismax: '2'
+    ymax_type_1: FIXED
+    ymin_type_1: FIXED
+  - graph_items:
+    - calc_fnc: ALL
+      color: 199C0D
+      item:
+        host: Asterisk Integration
+        key: system.cpu.load[,avg1]
+    - calc_fnc: ALL
+      color: 2196F3
+      item:
+        host: Asterisk Integration
+        key: system.cpu.load[,avg5]
+      sortorder: '1'
+    - calc_fnc: ALL
+      color: F06292
+      item:
+        host: Asterisk Integration
+        key: system.cpu.load[,avg15]
+      sortorder: '2'
+    name: Загрузка CPU
+    uuid: 6c4b488c384f4cc08d51e1a23b494689
+    yaxismax: '0'
+  - graph_items:
+    - calc_fnc: ALL
+      color: 199C0D
+      item:
+        host: Asterisk Integration
+        key: integration.clients
+    name: Количество клиентов 1с
+    uuid: 6775897da39949019dad8ad8c054a187
+    yaxismax: '0'
+  - graph_items:
+    - calc_fnc: ALL
+      color: 199C0D
+      item:
+        host: Asterisk Integration
+        key: integration.queue
+    name: Очередь отправки
+    uuid: f71c864e05bc4aa3941d59180bea685e
+    yaxismax: '0'
+  - graph_items:
+    - calc_fnc: ALL
+      color: 199C0D
+      item:
+        host: Asterisk Integration
+        key: vm.memory.size[available]
+    name: Размер доступной оперативной памяти
+    uuid: e49dc780166d4a0f89eaa2b977bd1d8e
+  - graph_items:
+    - calc_fnc: ALL
+      color: 199C0D
+      item:
+        host: Asterisk Integration
+        key: vm.memory.size[pavailable]
+    name: Размер доступной оперативной памяти %
+    uuid: 4582769d143248dc92b47437c7e63246
+  - graph_items:
+    - calc_fnc: ALL
+      color: AB47BC
+      item:
+        host: Asterisk Integration
+        key: docker.intagration.memory_pusage
+    name: Сервис Integration использование оперативной памяти %
+    uuid: 0a69fd413b964e288ee52f29f900c429
+    yaxismax: '0'
+  - graph_items:
+    - calc_fnc: ALL
+      color: 66BB6A
+      item:
+        host: Asterisk Integration
+        key: system.cpu.util[,system,avg1]
+    - calc_fnc: ALL
+      color: 5C6BC0
+      item:
+        host: Asterisk Integration
+        key: system.cpu.util[,system,avg5]
+      sortorder: '1'
+    - calc_fnc: ALL
+      color: BA68C8
+      item:
+        host: Asterisk Integration
+        key: system.cpu.util[,system,avg15]
+      sortorder: '2'
+    name: Утилизация CPU
+    uuid: ed62666fc39b410ba7cb54da6c46dd38
+    yaxismax: '0'
+  template_groups:
+  - name: Templates/Asterisk Integration
+    uuid: b58f9139a9614fe5b6258630beed97be
+  templates:
+  - dashboards:
+    - name: Asterisk Integration
+      pages:
+      - widgets:
+        - fields:
+          - name: columns.0.data
+            type: INTEGER
+            value: '1'
+          - name: columns.0.decimal_places
+            type: INTEGER
+            value: '0'
+          - name: columns.0.display
+            type: INTEGER
+            value: '3'
+          - name: columns.0.item
+            type: STRING
+            value: integration Использование CPU
+          - name: columns.0.max
+            type: STRING
+            value: '100'
+          - name: columns.0.min
+            type: STRING
+            value: '0'
+          - name: columns.0.name
+            type: STRING
+            value: ПРОЦЕССОР
+          - name: columns.0.text
+            type: STRING
+            value: ''
+          - name: columns.1.data
+            type: INTEGER
+            value: '1'
+          - name: columns.1.item
+            type: STRING
+            value: integration Использование оперативной памяти
+          - name: columns.1.name
+            type: STRING
+            value: ПАМЯТЬ
+          - name: columns.1.text
+            type: STRING
+            value: ''
+          - name: columns.2.data
+            type: INTEGER
+            value: '1'
+          - name: columns.2.item
+            type: STRING
+            value: integration Лимит оперативной памяти
+          - name: columns.2.name
+            type: STRING
+            value: ЛИМИТ
+          - name: columns.2.text
+            type: STRING
+            value: ''
+          - name: columns.3.data
+            type: INTEGER
+            value: '1'
+          - name: columns.3.item
+            type: STRING
+            value: Сервис интеграции использование ОЗУ %
+          - name: columns.3.name
+            type: STRING
+            value: ОЗУ %
+          - name: columns.3.text
+            type: STRING
+            value: ''
+          - name: columns.4.data
+            type: INTEGER
+            value: '1'
+          - name: columns.4.decimal_places
+            type: INTEGER
+            value: '0'
+          - name: columns.4.item
+            type: STRING
+            value: Доступность сервиса Integration
+          - name: columns.4.name
+            type: STRING
+            value: ДОСТУПНОСТЬ
+          - name: columns.4.text
+            type: STRING
+            value: ''
+          - name: columnsthresholds.0.color.0
+            type: STRING
+            value: 00FFBF
+          - name: columnsthresholds.0.color.1
+            type: STRING
+            value: CDDC39
+          - name: columnsthresholds.0.color.2
+            type: STRING
+            value: FFA000
+          - name: columnsthresholds.0.color.3
+            type: STRING
+            value: EF6C00
+          - name: columnsthresholds.0.color.4
+            type: STRING
+            value: 8F2809
+          - name: columnsthresholds.0.threshold.0
+            type: STRING
+            value: '0'
+          - name: columnsthresholds.0.threshold.1
+            type: STRING
+            value: '20'
+          - name: columnsthresholds.0.threshold.2
+            type: STRING
+            value: '40'
+          - name: columnsthresholds.0.threshold.3
+            type: STRING
+            value: '60'
+          - name: columnsthresholds.0.threshold.4
+            type: STRING
+            value: '80'
+          - name: reference
+            type: STRING
+            value: IROBM
+          - name: rf_rate
+            type: INTEGER
+            value: '30'
+          name: Integration
+          type: tophosts
+          width: '23'
+        - fields:
+          - name: graphid.0
+            type: GRAPH
+            value:
+              host: Asterisk Integration
+              name: Очередь отправки
+          - name: reference
+            type: STRING
+            value: LYHHD
+          height: '6'
+          type: graph
+          width: '36'
+          y: '2'
+        - fields:
+          - name: graphid.0
+            type: GRAPH
+            value:
+              host: Asterisk Integration
+              name: Загрузка CPU
+          - name: reference
+            type: STRING
+            value: TTZZJ
+          height: '5'
+          type: graph
+          width: '36'
+          y: '8'
+        - fields:
+          - name: graphid.0
+            type: GRAPH
+            value:
+              host: Asterisk Integration
+              name: Вызовы
+          - name: reference
+            type: STRING
+            value: DCJKM
+          height: '6'
+          type: graph
+          width: '36'
+          x: '36'
+          y: '2'
+        - fields:
+          - name: graphid.0
+            type: GRAPH
+            value:
+              host: Asterisk Integration
+              name: Количество клиентов 1с
+          - name: reference
+            type: STRING
+            value: MCLKW
+          height: '5'
+          type: graph
+          width: '36'
+          x: '36'
+          y: '8'
+      uuid: bf4acd225c994ae59a50ae31d5d25ec6
+    description: Шаблон для мониторинга сервисов integration развернутых в Docker
+    discovery_rules:
+    - filter:
+        conditions:
+        - macro: '{#SERVICES_NAME}'
+          value: integration
+      graph_prototypes:
+      - graph_items:
+        - calc_fnc: ALL
+          color: 199C0D
+          item:
+            host: Asterisk Integration
+            key: docker.intagration.cpu_usage[{#SERVICES_NAME}]
+        name: '{#SERVICES_NAME} Использование CPU сервисом интеграции'
+        uuid: 4976f64f03ad43959594970815914e99
+      - graph_items:
+        - calc_fnc: ALL
+          color: EC407A
+          item:
+            host: Asterisk Integration
+            key: docker.intagration.memory_limit[{#SERVICES_NAME}]
+        - calc_fnc: ALL
+          color: 26C6DA
+          item:
+            host: Asterisk Integration
+            key: docker.intagration.memory_usage[{#SERVICES_NAME}]
+          sortorder: '1'
+        name: '{#SERVICES_NAME} Использование ОЗУ сервисом интеграции'
+        uuid: 5ca1aa98dbc34726b197661ac95f6b8e
+      item_prototypes:
+      - key: docker.container_stats[{#SERVICES_NAME}]
+        name: '{#SERVICES_NAME} Данные Docker'
+        tags:
+        - tag: component
+          value: docker
+        - tag: service
+          value: '{#SERVICES_NAME}'
+        uuid: bb0a531f0918429a90f14bfd933cc052
+        value_type: CHAR
+      - key: docker.intagration.cpu_usage[{#SERVICES_NAME}]
+        master_item:
+          key: docker.container_stats[{#SERVICES_NAME}]
+        name: '{#SERVICES_NAME} Использование CPU'
+        preprocessing:
+        - parameters:
+          - $.cpu_stats.cpu_usage.percent_usage
+          type: JSONPATH
+        - parameters:
+          - return Number(value).toFixed(2)
+          type: JAVASCRIPT
+        tags:
+        - tag: component
+          value: cpu
+        - tag: component
+          value: docker
+        - tag: service
+          value: '{#SERVICES_NAME}'
+        trends: 31d
+        trigger_prototypes:
+        - expression: last(/Asterisk Integration/docker.intagration.cpu_usage[{#SERVICES_NAME}])>=75
+          name: '{#SERVICES_NAME} Использование CPU > 75%'
+          priority: INFO
+          uuid: c9bedd801d484d7384d24fa60d471c38
+        - dependencies:
+          - expression: last(/Asterisk Integration/docker.intagration.cpu_usage[{#SERVICES_NAME}])>=75
+            name: '{#SERVICES_NAME} Использование CPU > 75%'
+          expression: last(/Asterisk Integration/docker.intagration.cpu_usage[{#SERVICES_NAME}])>=85
+          name: '{#SERVICES_NAME} Использование CPU > 85%'
+          priority: AVERAGE
+          uuid: c4933f117f4b4f24a6ee707f12a21251
+        - dependencies:
+          - expression: last(/Asterisk Integration/docker.intagration.cpu_usage[{#SERVICES_NAME}])>=75
+            name: '{#SERVICES_NAME} Использование CPU > 75%'
+          - expression: last(/Asterisk Integration/docker.intagration.cpu_usage[{#SERVICES_NAME}])>=85
+            name: '{#SERVICES_NAME} Использование CPU > 85%'
+          expression: last(/Asterisk Integration/docker.intagration.cpu_usage[{#SERVICES_NAME}])>=90
+          name: '{#SERVICES_NAME} Использование CPU > 90%'
+          priority: HIGH
+          uuid: 4974c4f65be24684bd2f978a18afb82c
+        type: DEPENDENT
+        uuid: f6564495d1c04312b30f0011bdff28d2
+      - key: docker.intagration.memory_limit[{#SERVICES_NAME}]
+        master_item:
+          key: docker.container_stats[{#SERVICES_NAME}]
+        name: '{#SERVICES_NAME} Лимит оперативной памяти'
+        preprocessing:
+        - parameters:
+          - $.memory_stats.limit
+          type: JSONPATH
+        tags:
+        - tag: component
+          value: docker
+        - tag: component
+          value: memory
+        - tag: service
+          value: '{#SERVICES_NAME}'
+        trends: 31d
+        type: DEPENDENT
+        units: B
+        uuid: 7a4ece5b7a3b4ab3a26f3b6ea3a9a138
+      - key: docker.intagration.memory_usage[{#SERVICES_NAME}]
+        master_item:
+          key: docker.container_stats[{#SERVICES_NAME}]
+        name: '{#SERVICES_NAME} Использование оперативной памяти'
+        preprocessing:
+        - parameters:
+          - $.memory_stats.usage
+          type: JSONPATH
+        tags:
+        - tag: component
+          value: docker
+        - tag: component
+          value: memory
+        - tag: service
+          value: '{#SERVICES_NAME}'
+        trends: 31d
+        type: DEPENDENT
+        units: B
+        uuid: 25029fe1db594732b28f2f9120a30d60
+      key: integration.services
+      lld_macro_paths:
+      - lld_macro: '{#SERVICES_NAME}'
+        path: $.name
+      master_item:
+        key: docker.containers
+      name: Обнаружение сервиса Integration
+      type: DEPENDENT
+      uuid: 5bc65bf9d124479da28c3c3cb79db04e
+    - filter:
+        conditions:
+        - macro: '{#IFNAME}'
+          operator: NOT_MATCHES_REGEX
+          value: lo
+      graph_prototypes:
+      - graph_items:
+        - calc_fnc: ALL
+          color: 199C0D
+          item:
+            host: Asterisk Integration
+            key: net.if.in["{#IFNAME}"]
+        - calc_fnc: ALL
+          color: F63100
+          item:
+            host: Asterisk Integration
+            key: net.if.out["{#IFNAME}"]
+          sortorder: '1'
+        name: '{#IFNAME} сетевой трафик'
+        uuid: 11bbd65d09024cfbb89831db8155a81f
+        yaxismax: '0'
+      item_prototypes:
+      - key: net.if.in["{#IFNAME}"]
+        name: '{#IFNAME} входящий'
+        preprocessing:
+        - parameters:
+          - '8'
+          type: MULTIPLIER
+        - type: CHANGE_PER_SECOND
+        tags:
+        - tag: component
+          value: network
+        - tag: interfice
+          value: '{#IFNAME}'
+        trends: 31d
+        uuid: 35581dd8d62e40f2805cc2b25da92bbb
+      - key: net.if.out["{#IFNAME}"]
+        name: '{#IFNAME} исходящий'
+        preprocessing:
+        - parameters:
+          - '8'
+          type: MULTIPLIER
+        - type: CHANGE_PER_SECOND
+        tags:
+        - tag: component
+          value: network
+        - tag: interfice
+          value: '{#IFNAME}'
+        trends: 31d
+        uuid: 99d6d53a097f46f381980f980b71bc5b
+      key: net.if.discovery
+      lifetime_type: DELETE_IMMEDIATELY
+      name: Обнаружение сетевых интерфейсов
+      uuid: 722e1e3cbd6e4ffead0f4a55ca948073
+    - filter:
+        conditions:
+        - macro: '{#FSNAME}'
+          operator: NOT_MATCHES_REGEX
+          value: '[a-z]'
+      graph_prototypes:
+      - graph_items:
+        - calc_fnc: ALL
+          color: 199C0D
+          item:
+            host: Asterisk Integration
+            key: vfs.fs.size[{#FSNAME},total]
+        - calc_fnc: ALL
+          color: F63100
+          item:
+            host: Asterisk Integration
+            key: vfs.fs.size[{#FSNAME},used]
+          sortorder: '1'
+        name: '{#FSNAME} Использование дискового пространства'
+        uuid: c73215161c3843a08741d0608c3e4c9c
+      item_prototypes:
+      - key: vfs.fs.size[{#FSNAME},free]
+        name: Свободное дисковое пространство
+        tags:
+        - tag: component
+          value: fs
+        trends: 31d
+        uuid: 9c5e86c12012440b89dfad1067df8584
+        value_type: FLOAT
+      - key: vfs.fs.size[{#FSNAME},pfree]
+        name: Свободное дисковое пространство %
+        tags:
+        - tag: component
+          value: fs
+        trends: 31d
+        trigger_prototypes:
+        - expression: last(/Asterisk Integration/vfs.fs.size[{#FSNAME},pfree])<=20
+          name: Дисковое пространство завершается
+          priority: HIGH
+          uuid: 870c8ea6d48548beb0635ff1ab83621a
+        units: '%'
+        uuid: 429867354dfe44098df2920f402d20fd
+        value_type: FLOAT
+      - key: vfs.fs.size[{#FSNAME},pused]
+        name: Используемое дисковое пространство %
+        preprocessing:
+        - parameters:
+          - return Number(value).toFixed(2)
+          type: JAVASCRIPT
+        tags:
+        - tag: component
+          value: fs
+        trends: 31d
+        uuid: f96b7d189a854c43b813349805988e53
+        value_type: FLOAT
+      - key: vfs.fs.size[{#FSNAME},total]
+        name: Дисковое пространство
+        tags:
+        - tag: component
+          value: fs
+        trends: 31d
+        uuid: 3a02b41279314fd48ec131dfd29d5067
+        value_type: FLOAT
+      - key: vfs.fs.size[{#FSNAME},used]
+        name: Используемое дисковое пространство
+        tags:
+        - tag: component
+          value: fs
+        trends: 31d
+        uuid: 1d75224f3cc5436ab1f47b4d228e3fa3
+        value_type: FLOAT
+      key: vfs.fs.discovery
+      lifetime_type: DELETE_IMMEDIATELY
+      name: Обнаружение дискового пространства
+      uuid: 33084fa753fd4af29045ae2a276cf6ec
+    groups:
+    - name: Templates/Asterisk Integration
+    items:
+    - key: agent.ping
+      name: Доступность агента
+      tags:
+      - tag: tag
+        value: check
+      - tag: tag
+        value: ping
+      trends: 31d
+      uuid: e998e02857ce4ee6a1eccde71d8cd833
+    - delay: 10m
+      key: agent.version
+      name: Версия агента (инвентаризация)
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: inv
+      uuid: d1bed5b666fd4c1a8889db0ea067e708
+      value_type: CHAR
+    - description: 'Получение информации о контейнерах
+
+        Array for LLD rules
+
+        '
+      key: docker.containers
+      name: Контейнеры Docker
+      preprocessing:
+      - parameters:
+        - return JSON.stringify(JSON.parse(value),['Names'])
+        type: JAVASCRIPT
+      - parameters:
+        - "var data = JSON.parse(value)\nvar arr = new Array()\nfor (var key in data)\
+          \      {\n    if (data.hasOwnProperty(key)) {\n        arr.push({ name:\
+          \   data[key].Names[0].replace('/',     '') })\n    }\n}\nreturn JSON.stringify(arr)\n"
+        type: JAVASCRIPT
+      tags:
+      - tag: component
+        value: docker
+      - tag: component
+        value: raw
+      uuid: 6e534904a9a9494fa9d2db046dddb1b9
+      value_type: CHAR
+    - delay: 10s
+      key: docker.intagration.memory_pusage
+      name: Сервис интеграции использование ОЗУ %
+      params: last(//docker.intagration.memory_usage[integration])/last(//docker.intagration.memory_limit[integration])*100
+      preprocessing:
+      - parameters:
+        - return Number(value).toFixed(2)
+        type: JAVASCRIPT
+      tags:
+      - tag: component
+        value: docker
+      - tag: service
+        value: intagration
+      - tag: tag
+        value: memory
+      trends: 31d
+      triggers:
+      - dependencies:
+        - expression: last(/Asterisk Integration/docker.intagration.memory_pusage)>=80
+          name: Сервис Integration использование оперативной памяти > 80 %
+        - expression: last(/Asterisk Integration/docker.intagration.memory_pusage)>=90
+          name: Сервис Integration использование оперативной памяти > 90 %
+        expression: last(/Asterisk Integration/docker.intagration.memory_pusage)>=70
+        name: Сервис Integration использование оперативной памяти > 70 %
+        priority: HIGH
+        status: DISABLED
+        uuid: 92b0a2cb09c94960b43c18475c118dfc
+      - dependencies:
+        - expression: last(/Asterisk Integration/docker.intagration.memory_pusage)>=90
+          name: Сервис Integration использование оперативной памяти > 90 %
+        expression: last(/Asterisk Integration/docker.intagration.memory_pusage)>=80
+        name: Сервис Integration использование оперативной памяти > 80 %
+        priority: AVERAGE
+        status: DISABLED
+        uuid: 54fbad30688f4102917c3d49b4870139
+      - expression: last(/Asterisk Integration/docker.intagration.memory_pusage)>=90
+        name: Сервис Integration использование оперативной памяти > 90 %
+        priority: WARNING
+        status: DISABLED
+        uuid: 78357af930ed4f7cb48e85a4e9d0d251
+      type: CALCULATED
+      uuid: 107a7af3b7854400b99f27acafe336a8
+      value_type: FLOAT
+    - key: icmpping[,4,,,]
+      name: Доступность сетевого узла
+      tags:
+      - tag: tag
+        value: check
+      - tag: tag
+        value: icmpping
+      trends: 31d
+      triggers:
+      - expression: last(/Asterisk Integration/icmpping[,4,,,])=0
+        name: Узел не доступен {HOST.CONN}
+        priority: HIGH
+        uuid: de20724a5cdf4d75b7371c402664fc19
+      type: SIMPLE
+      uuid: cd44742d9d774928b0f66b5f9ba82c47
+    - key: integration.answered.call
+      master_item:
+        key: integration.statistics[{HOST.CONN},{$INTEGRATION_PORT}]
+      name: Отвеченные вызовы
+      preprocessing:
+      - parameters:
+        - $.answered_call
+        type: JSONPATH
+      tags:
+      - tag: component
+        value: answered-call
+      - tag: service
+        value: integration
+      trends: 31d
+      type: DEPENDENT
+      uuid: 610de16a35894e76a96462fd6069b059
+    - key: integration.clients
+      master_item:
+        key: integration.statistics[{HOST.CONN},{$INTEGRATION_PORT}]
+      name: Количество клиентов 1с
+      preprocessing:
+      - parameters:
+        - $.connected_clients
+        type: JSONPATH
+      tags:
+      - tag: component
+        value: clients
+      - tag: service
+        value: integration
+      trends: 31d
+      triggers:
+      - expression: last(/Asterisk Integration/integration.clients)=0
+        name: Отсутствие подключенных клиентов 1С
+        priority: INFO
+        status: DISABLED
+        uuid: 97ff4aed3ed3481cb432c9d88db040d5
+      type: DEPENDENT
+      uuid: 34c9c6acd65e4b48bb877c39c2042a47
+    - key: integration.hangup.call
+      master_item:
+        key: integration.statistics[{HOST.CONN},{$INTEGRATION_PORT}]
+      name: Завершенные звонки
+      preprocessing:
+      - parameters:
+        - $.hangup_call
+        type: JSONPATH
+      tags:
+      - tag: component
+        value: hangup-call
+      - tag: service
+        value: integration
+      trends: 31d
+      type: DEPENDENT
+      uuid: 7b0e7a3a6f6e417e9c76061103c0d31e
+    - key: integration.incoming.call
+      master_item:
+        key: integration.statistics[{HOST.CONN},{$INTEGRATION_PORT}]
+      name: Входящие вызовы
+      preprocessing:
+      - parameters:
+        - $.incoming_call
+        type: JSONPATH
+      tags:
+      - tag: component
+        value: incoming-call
+      - tag: service
+        value: integration
+      trends: 31d
+      type: DEPENDENT
+      uuid: e0c5df47338c4c6ebfc556f50537d4d3
+    - key: integration.outgoing.call
+      master_item:
+        key: integration.statistics[{HOST.CONN},{$INTEGRATION_PORT}]
+      name: Исходящие вызовы
+      preprocessing:
+      - parameters:
+        - $.outgoing_call
+        type: JSONPATH
+      tags:
+      - tag: component
+        value: outgoing-call
+      - tag: service
+        value: integration
+      trends: 31d
+      type: DEPENDENT
+      uuid: 0c4779f5f2a042c3bab05c88c67fbd0f
+    - key: integration.queue
+      master_item:
+        key: integration.statistics[{HOST.CONN},{$INTEGRATION_PORT}]
+      name: Очередь отправки
+      preprocessing:
+      - parameters:
+        - $.quantity_in_queue
+        type: JSONPATH
+      tags:
+      - tag: component
+        value: queue
+      - tag: service
+        value: integration
+      trends: 31d
+      triggers:
+      - expression: last(/Asterisk Integration/integration.queue)>=100
+        name: Очередь отправки переполнена
+        priority: WARNING
+        uuid: 8415662ed9bc471db34f7a204216b50f
+      type: DEPENDENT
+      uuid: eb34710ecb6a4e34ae059b99fc7ca6fd
+    - key: integration.statistics[{HOST.CONN},{$INTEGRATION_PORT}]
+      name: Статистика сервиса интеграции
+      tags:
+      - tag: service
+        value: intagration
+      uuid: 6f6462767d78415b88dea0567295305d
+      value_type: CHAR
+    - key: net.tcp.service[tcp,{HOST.CONN},{$INTEGRATION_PORT}]
+      name: Доступность сервиса Integration
+      tags:
+      - tag: service
+        value: integration
+      trends: 31d
+      triggers:
+      - expression: last(/Asterisk Integration/net.tcp.service[tcp,{HOST.CONN},{$INTEGRATION_PORT}])=0
+        name: Сервис Integration не доступен
+        priority: HIGH
+        uuid: 420d517c12e446218e47beb92e877ece
+      uuid: 5244c014a1d7435bb4cf6965bb2356a8
+    - delay: 10m
+      key: proc.num[]
+      name: Количество процессов
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: inv
+      trends: '0'
+      uuid: 86e617cb711d447d966a887e615cacac
+    - key: system.cpu.load[,avg1]
+      name: Загрузка CPU, 1min
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: cpu
+      trends: 31d
+      triggers:
+      - expression: last(/Asterisk Integration/system.cpu.load[,avg1])>=2.8
+        name: Загрузка CPU, 1min
+        priority: INFO
+        status: DISABLED
+        uuid: 50caacc740df47fdb5cef15af6b37d7d
+      uuid: d4f8ae4baaa64ec0a91af6e0490d2478
+      value_type: FLOAT
+    - key: system.cpu.load[,avg5]
+      name: Загрузка CPU, 5min
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: cpu
+      trends: 31d
+      triggers:
+      - dependencies:
+        - expression: last(/Asterisk Integration/system.cpu.load[,avg1])>=2.8
+          name: Загрузка CPU, 1min
+        expression: last(/Asterisk Integration/system.cpu.load[,avg5])>=2.8
+        name: Загрузка CPU, 5min
+        priority: AVERAGE
+        status: DISABLED
+        uuid: e59ec28b0a934d10b284b7f72dc41816
+      uuid: b228b4bbbc914f62a211f1814a810520
+      value_type: FLOAT
+    - key: system.cpu.load[,avg15]
+      name: Загрузка CPU, 15min
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: cpu
+      trends: 31d
+      triggers:
+      - dependencies:
+        - expression: last(/Asterisk Integration/system.cpu.load[,avg1])>=2.8
+          name: Загрузка CPU, 1min
+        - expression: last(/Asterisk Integration/system.cpu.load[,avg5])>=2.8
+          name: Загрузка CPU, 5min
+        expression: last(/Asterisk Integration/system.cpu.load[,avg15])>=2.8
+        name: Загрузка CPU, 15min
+        priority: HIGH
+        status: DISABLED
+        uuid: 89ab19cdf916498cbc469feacf04ee3c
+      uuid: 12717d6c90ee44e7b0d001a003477a57
+      value_type: FLOAT
+    - key: system.cpu.util[,system,avg1]
+      name: Утилизация CPU, 1min
+      preprocessing:
+      - parameters:
+        - '100'
+        type: MULTIPLIER
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: cpu
+      trends: 31d
+      triggers:
+      - expression: last(/Asterisk Integration/system.cpu.util[,system,avg1])>=90
+        name: Утилизация CPU, 1min
+        priority: INFO
+        status: DISABLED
+        uuid: a62c957926f34a208263dd2b5d22bc06
+      uuid: 81af5f18df144d1796683f80e56fd273
+      value_type: FLOAT
+    - key: system.cpu.util[,system,avg5]
+      name: Утилизация CPU, 5min
+      preprocessing:
+      - parameters:
+        - '100'
+        type: MULTIPLIER
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: cpu
+      trends: 31d
+      triggers:
+      - dependencies:
+        - expression: last(/Asterisk Integration/system.cpu.util[,system,avg1])>=90
+          name: Утилизация CPU, 1min
+        expression: last(/Asterisk Integration/system.cpu.util[,system,avg5])>=80
+        name: Утилизация CPU, 5min
+        priority: AVERAGE
+        status: DISABLED
+        uuid: 146e6a0e2bf14d81b0a02daddf5326fe
+      uuid: 0622c10a686c4d95b3471a381ee5f75d
+      value_type: FLOAT
+    - key: system.cpu.util[,system,avg15]
+      name: Утилизация CPU, 15min
+      preprocessing:
+      - parameters:
+        - '100'
+        type: MULTIPLIER
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: cpu
+      trends: 31d
+      triggers:
+      - dependencies:
+        - expression: last(/Asterisk Integration/system.cpu.util[,system,avg1])>=90
+          name: Утилизация CPU, 1min
+        - expression: last(/Asterisk Integration/system.cpu.util[,system,avg5])>=80
+          name: Утилизация CPU, 5min
+        expression: last(/Asterisk Integration/system.cpu.util[,system,avg15])>=60
+        name: Утилизация CPU, 15min
+        priority: HIGH
+        status: DISABLED
+        uuid: 457c906413034e05b4b37777d3a0a459
+      uuid: fc950c3780b84702962b101958eed362
+      value_type: FLOAT
+    - delay: 10m
+      key: system.hostname[host]
+      name: Имя хоста (инвентаризация)
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: inv
+      uuid: b9cd241e802c44de9b4ead8619d41580
+      value_type: CHAR
+    - delay: 10m
+      key: system.hw.cpu[0,curfreq]
+      name: Информация о ЦПУ (инвентаризация)
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: inv
+      trends: '0'
+      units: Hz
+      uuid: 1beb3981d219427db43536d230c25cfa
+    - delay: 10m
+      key: system.hw.cpu[0,full]
+      name: Информация о ЦПУ подробно (инвентаризация)
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: inv
+      uuid: e4733fae12d4492aa82e06ff5cbe8d40
+      value_type: CHAR
+    - key: system.sw.arch
+      name: Архитектура ПО (инвентаризация)
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: inv
+      uuid: 0909ec15b3eb48ab9e54db412bb18713
+      value_type: CHAR
+    - delay: 10m
+      key: system.sw.os[full]
+      name: Информация об ОС (инвентаризация)
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: inv
+      uuid: e65062b56e4241819eb7485f54ba73b7
+      value_type: CHAR
+    - delay: 10m
+      key: system.uname
+      name: Идентификация системы (инвентаризация)
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: inv
+      uuid: 0a97597a878f4159b5321815351011ba
+      value_type: CHAR
+    - key: system.uptime
+      name: Время работы системы (инвентаризация)
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: inv
+      trends: '0'
+      units: c
+      uuid: 31d50d5e705d4b11b5882a34e1f9db4d
+    - key: vm.memory.size[available]
+      name: Размер доступной ОЗУ
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: inv
+      - tag: tag
+        value: memory
+      trends: '0'
+      units: B
+      uuid: ea8e755e25054bc18740718beb541a17
+      value_type: FLOAT
+    - key: vm.memory.size[pavailable]
+      name: Размер доступной ОЗУ %
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: inv
+      - tag: tag
+        value: memory
+      trends: '0'
+      triggers:
+      - expression: last(/Asterisk Integration/vm.memory.size[pavailable])<=15
+        name: Низкий уровень доступного объема оперативной памяти {HOST.CONN}
+        priority: WARNING
+        uuid: d83ad2e0c809416a8600d31869abbc0f
+      units: '%'
+      uuid: 7265aac851b74792bb1250926ba8d211
+      value_type: FLOAT
+    - key: vm.memory.size[used]
+      name: Размер используемой ОЗУ
+      tags:
+      - tag: system
+        value: system
+      - tag: tag
+        value: inv
+      - tag: tag
+        value: memory
+      trends: '0'
+      units: B
+      uuid: 872c82f6f6924f058985acb5ff9b5ee7
+      value_type: FLOAT
+    macros:
+    - description: Порт сервиса Integration
+      macro: '{$INTEGRATION_PORT}'
+      value: '8089'
+    name: Asterisk Integration
+    tags:
+    - tag: service
+      value: asterisk
+    - tag: service
+      value: integration
+    template: Asterisk Integration
+    uuid: 0ffae7336d4d4a9d8fe2fdf93056c3ee
+    vendor:
+      name: KAB
+      version: 7.4-2
+  triggers:
+  - expression: last(/Asterisk Integration/icmpping[,4,,,])=1 and nodata(/Asterisk
+      Integration/agent.ping,120)=1
+    name: Zabbix-agent не отдает данные {HOST.CONN}
+    priority: HIGH
+    uuid: eef8ddf8f4fd41cdb0c409e4f34d3891
+  version: '7.4'

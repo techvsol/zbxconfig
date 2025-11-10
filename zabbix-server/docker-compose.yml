@@ -1,0 +1,42 @@
+services:
+
+    zabbix-db:
+      container_name: zabbix-db
+      image: postgres:17-alpine
+      restart: unless-stopped
+      env_file:
+        - .env
+      ports:
+        - 5432:5432
+      volumes:
+        - /etc/localtime:/etc/localtime:ro
+        - /var/data/zabbix-db:/var/lib/postgresql/data
+      logging:
+        driver: journald
+
+    zabbix-server:
+      container_name: zabbix-server
+      image: zabbix/zabbix-server-pgsql:alpine-7.4.3
+      restart: unless-stopped
+      depends_on:
+       - zabbix-db
+      volumes:
+        - /etc/localtime:/etc/localtime:ro
+      ports:
+        - 10051:10051
+      env_file:
+        - .env
+      logging:
+        driver: journald
+
+    zabbix-web:
+      container_name: zabbix-web
+      image: zabbix/zabbix-web-apache-pgsql:alpine-7.4.3
+      restart: unless-stopped
+      ports:
+        - 80:8080
+      env_file:
+        - .env
+      logging:
+        driver: journald
+

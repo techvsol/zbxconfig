@@ -1,0 +1,18 @@
+services:
+
+    zabbix-agent:
+      container_name: zabbix-agent
+      image: zabbix/zabbix-agent2:ubuntu-7.4.3
+      restart: unless-stopped
+      user: root
+      ports:
+        - 10050:10050
+      env_file:
+        - .env
+      volumes:
+        - /etc/localtime:/etc/localtime:ro
+        - ./zabbix_agentd.d:/etc/zabbix/zabbix_agentd.d
+        - ./statistics:/usr/local/bin/statistics:rx
+        - /var/run/docker.sock:/var/run/docker.sock:ro
+      logging:
+        driver: journald
